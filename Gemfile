@@ -25,6 +25,7 @@ gem 'cancancan'
 
 # file upload
 gem 'carrierwave'
+gem 'mini_magick'
 
 # paging
 gem 'kaminari'

@@ -23,7 +23,7 @@ class Backend::ProductsController < Backend::BaseController
 
   def update
     if @product.update(product_params)
-      redirect backend_products_path, notice: '成功更新商品'
+      redirect_to backend_products_path, notice: '成功更新商品'
     else
       render :edit
     end
@@ -31,7 +31,7 @@ class Backend::ProductsController < Backend::BaseController
 
   def destroy
     @product.destroy
-    redirect backend_products_path
+    redirect_to backend_products_path
   end
 
   private
