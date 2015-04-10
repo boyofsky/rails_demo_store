@@ -1,7 +1,8 @@
 class Backend::ProductsController < Backend::BaseController
+  before_action :find_product, only:[:edit, :update, :destroy]
 
   def index
-    # TODO
+    @products = Product.page(params[:page]).per(10)
   end
 
   def new
@@ -18,15 +19,24 @@ class Backend::ProductsController < Backend::BaseController
   end
 
   def edit
-    # TODO
   end
 
   def update
-    # TODO
+    if @product.update(product_params)
+      redirect backend_products_path, notice: '成功刪除商品'
+    else
+      render :edit
+    end
   end
 
   def destroy
-    # TODO
+    @product.destroy
+    redirect backend_products_path
+  end
+
+  private
+  def find_product
+    @product = Product.find_by(id: params[:id])
   end
 
   def product_params

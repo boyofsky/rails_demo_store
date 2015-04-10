@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 
   namespace :backend do
     get 'dashboard', to:'dashboard#index'
-    resources :products
+    resources :products, except:[:show]
   end
 end
