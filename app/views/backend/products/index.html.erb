@@ -16,14 +16,11 @@
     <tr>
       <td><%= product.name %></td>
       <td><%= product.price %></td>
-      <td>
-        <% if product.is_online %>
-          是
-        <% else %>
-          否
-        <% end %>
-      </td>
-      <td></td>
+      <td><%= product_status(product) %></td>
+        <td>
+          <%= edit_button(edit_backend_product_path(product)) %>
+          <%= delete_button(backend_product_path(product)) %>
+        </td>
     </tr>
   <% end %>
   </tbody>
