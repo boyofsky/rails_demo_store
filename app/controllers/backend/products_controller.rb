@@ -23,7 +23,7 @@ class Backend::ProductsController < Backend::BaseController
 
   def update
     if @product.update(product_params)
-      redirect backend_products_path, notice: '成功刪除商品'
+      redirect backend_products_path, notice: '成功更新商品'
     else
       render :edit
     end
