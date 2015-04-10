@@ -1,5 +1,6 @@
 <%= simple_form_for [:backend, @product] do |f| %>
   <%= f.input :name %>
+  <%= f.association :category %>
   <%= f.input :description %>
   <%= f.input :price %>
   <%= f.input :is_online %>
