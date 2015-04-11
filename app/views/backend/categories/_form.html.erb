@@ -1,0 +1,12 @@
+<div class="col-md-8">
+<ol class="breadcrumb">
+  <li><%= link_to '後台管理系統', backend_dashboard_path%></li>
+  <li><%= link_to '商品分類', backend_categories_path%></li>
+  <li class="active">編輯分類</li>
+</ol>
+
+<%= simple_form_for [:backend, @category] do |f| %>
+  <%= f.input :name %>
+  <%= f.submit %>
+<% end %>
+</div>

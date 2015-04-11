@@ -1,3 +1,10 @@
+<div class="col-md-8">
+<ol class="breadcrumb">
+  <li><%= link_to '後台管理系統', backend_dashboard_path%></li>
+  <li><%= link_to '商品列表', backend_products_path%></li>
+  <li class="active">編輯商品</li>
+</ol>	
+	
 <%= simple_form_for [:backend, @product] do |f| %>
   <%= f.input :name %>
   <%= f.association :category %>
@@ -7,3 +14,4 @@
   <%= f.input :image, as: :file %>
   <%= f.submit %>
 <% end %>
+</div>
